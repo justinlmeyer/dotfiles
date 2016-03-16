@@ -140,6 +140,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 " http://stackoverflow.com/questions/7519074/in-vims-nerdtree-is-there-a-way-to-open-a-file-dir-using-the-space-key-or-tab
 let NERDTreeMapActivateNode='<space>'
+" http://superuser.com/questions/195022/vim-how-to-synchronize-nerdtree-with-current-opened-tab-file-path
+map <leader>f :NERDTreeFind<cr>
 
 
 " Line numbers
@@ -182,6 +184,9 @@ nnoremap <leader>h <Esc> :noh<cr>
 " https://github.com/wincent/Command-T
 Plugin 'wincent/command-t'
 
+" http://stackoverflow.com/questions/561500/how-may-i-scroll-with-vim-into-a-big-file
+" CTRL-E - scroll down
+" CTRL-Y - scroll up
 
 
 " All of your Plugins must be added before the following line
