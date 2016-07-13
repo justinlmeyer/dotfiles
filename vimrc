@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
 "       Amir Salihefendic
 "       http://amix.dk - amix@amix.dk
@@ -117,7 +117,16 @@ EOF
 "    \ set shiftwidth=2
 
 " Syntax Checking / Highlighting
+" TODO re-enable this when i figure out how to make it less aggressive
 Plugin 'scrooloose/syntastic'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
 Plugin 'nvie/vim-flake8'
 let python_highlight_all=1
 syntax on
@@ -158,23 +167,24 @@ set clipboard=unnamed
 " Plugin 'Conque-Shell'
 
 " https://github.com/Chiel92/vim-autoformat
-"Plugin 'Chiel92/vim-autoformat'
-"let g:formatdef_autopep8 = 'autopep8\ -a\ -'
-"let g:formatters_python = ['autopep8']
+" Plugin 'Chiel92/vim-autoformat'
+" let g:formatdef_autopep8 = 'autopep8\ -a\ -'
+" let g:formatters_python = ['autopep8']
 " shorten the autoformat command
-"nnoremap <leader>f <Esc> :Autoformat autopep8<cr>
+" vmap f :Autoformat autopep8<cr>
 
 " https://lukas.zapletalovi.com/2011/10/reformat-vs-reindent-in-vim.html
 " reformat: gq
 " reindent: =
 au FileType python setlocal formatprg=autopep8\ -a\ -
+" au FileType python setlocal formatprg=autopep8\ -
 " map 'f' in visual mode to reformat
 vmap f gq
 " reindent and reformat the whole file
 nnoremap <leader>F ggVG= ggVGgq
 
 " http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line
-au! FileType python setl nosmartindent
+au FileType python setl nosmartindent
 
 
 " http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
